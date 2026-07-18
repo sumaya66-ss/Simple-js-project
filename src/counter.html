@@ -18,8 +18,14 @@
     </div>
 
     <script>
-        let count = 0;
+        let count = 1;
         function change(step){
+            const currentValue =document.getElementById("count").textContent;
+            console.log("current value is ",currentValue)
+            if(currentValue ==="0"){
+                console.log("count is 0 ,not proceeding")
+                return;
+            } 
             const stepValue = Number( document.getElementById("step").value);
             count += step * stepValue;
             document.getElementById("count").textContent = count;
