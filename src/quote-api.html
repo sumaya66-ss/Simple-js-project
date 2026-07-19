@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator</title>
+    <link href="./output.css" rel="stylesheet">
+
+    <title>counter</title>
+    
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-300">
+    <div class="bg-white p-6 rounded shadow max-w-md text-center">
+         <p class=" mb-4" id="quote"> Click for quote</p>
+         <button onclick="getQuote()" class="px-4 py-2 bg-blue-500 rounded cursor-pointer text-white">New Quote</button>
+    </div>
+   
+    
+
+
+    
+</body>
+<script>
+    async function getQuote() {
+        const el =document.getElementById("quote");
+        el.textContent ="loading...!"
+        try {
+            const res = await fetch("https://dummyjson.com/quotes/random"); 
+            const data = await res.json()
+            el.innerText =`"${data.quote}" -${data.author}`         
+        } catch (error) {  
+            el.textContent ="error"
+            
+        }
+        
+    }
+      
+</script>
+</html>
