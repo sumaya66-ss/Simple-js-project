@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <title>Tabs</title>
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-100">
+    <div class="bg-white p-6 rounded shadow w-80 text-center">
+        <div class="space-x-2 mb-4">
+            <button onclick="show('a')" id="A" class="px-3 py-1 bg-blue-300 cursor-pointer rounded"> TAB A</button>
+        <button onclick="show('b')" id="B"class="px-3 py-1 bg-blue-300 cursor-pointer rounded"> TAB B</button>
+        <button onclick="show('a')" id="C"class="px-3 py-1 bg-blue-300 cursor-pointer rounded">TAB C</button>
+
+        </div>
+        <p id="content">Content For TAB A </p>
+        
+        
+    </div>
+    <script>
+        
+
+        function show(tab){
+            const contentEl =document.getElementById("content");
+            switch(tab){
+                case "a":
+                    contentEl.innerText = "Content For TAB A"
+                break;
+                case "b":
+                    contentEl.innerText = "Content For TAB B"
+
+                break;
+
+                case "c":
+                    contentEl.innerText = "Content For TAB C"
+                    break;
+            }
+
+        }
+    
+
+
+    </script>
+
+    
+</body>
+</html>
